@@ -3,11 +3,81 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Stupid Simple Debugger</extension>
+    <extension index="1">extensions\DT - Controller Engine</extension>
+    <extension index="2">extensions\DT - Script Library</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Extensions">
+      <scripts name="DT - Controller Manager">
+        <scripts name="Add Controllers">
+          <script>scripts\dt_add_room_con.gml</script>
+          <script>scripts\dt_link_commons.gml</script>
+          <script>scripts\dt_add_con_room.gml</script>
+          <script>scripts\dt_add_persistent_con.gml</script>
+        </scripts>
+        <scripts name="Remove Controllers">
+          <script>scripts\dt_rem_per_controller.gml</script>
+          <script>scripts\dt_rem_rm_controller.gml</script>
+        </scripts>
+        <scripts name="Naming Operations">
+          <script>scripts\dt_get_rooms.gml</script>
+          <script>scripts\dt_get_objects.gml</script>
+        </scripts>
+        <scripts name="Master Control Operations">
+          <script>scripts\dt_create_per_controllers.gml</script>
+          <script>scripts\dt_create_rm_controllers.gml</script>
+          <script>scripts\dt_ut_list_room_con.gml</script>
+          <script>scripts\dt_init_controller_engine.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="DT - SSD">
+        <script>scripts\dt_track.gml</script>
+        <script>scripts\dt_debug_init.gml</script>
+        <script>scripts\dt_debug_set_keys.gml</script>
+        <script>scripts\dt_debug_set_title.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="GAME">
+      <script>scripts\draw_branch_vertexes.gml</script>
+    </scripts>
+  </scripts>
+  <fonts name="fonts">
+    <fonts name="DT - SSD">
+      <font>fonts\fnt_debug_font</font>
+    </fonts>
+  </fonts>
+  <objects name="objects">
+    <objects name="GAME">
+      <object>objects\obj_branch</object>
+    </objects>
+    <objects name="Extensions">
+      <objects name="DT - Controller Manager">
+        <object>objects\dt_con_master</object>
+      </objects>
+      <objects name="DT - SSD">
+        <object>objects\dt_obj_debug</object>
+        <objects name="Test">
+          <object>objects\dt_con_main</object>
+        </objects>
+      </objects>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <rooms name="GAME">
+      <room>rooms\rm_test</room>
+    </rooms>
+    <rooms name="DT - SSD">
+      <rooms name="Test">
+        <room>rooms\dt_rm_start</room>
+      </rooms>
+    </rooms>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
