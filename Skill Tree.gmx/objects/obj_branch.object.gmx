@@ -73,13 +73,14 @@ width = 100;
             <kind>1</kind>
             <string>///Draw Branch
 
+image_angle += 2;
 
 draw_primitive_begin( pr_trianglefan );
 
-scr_draw_branch_vertexes( length*.75, image_angle );//Nose
-scr_draw_branch_vertexes( width*.5, image_angle - 90 );//Left
-scr_draw_branch_vertexes( length*.25, image_angle - 180 );//Back
-scr_draw_branch_vertexes( width*.5, image_angle - 270 );//Back
+scr_draw_branch_vertexes( length, image_angle );//Nose
+scr_draw_branch_vertexes( width*.75, image_angle - 45 );//Left
+scr_draw_branch_vertexes( 0, image_angle - 180 );//Back
+scr_draw_branch_vertexes( width*.75, image_angle - 315 );//Back
 
 draw_primitive_end();
 

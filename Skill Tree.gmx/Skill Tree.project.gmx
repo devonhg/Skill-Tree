@@ -57,6 +57,7 @@
     <objects name="GAME">
       <object>objects\obj_branch</object>
       <object>objects\con_main</object>
+      <object>objects\con_tree_builder</object>
     </objects>
     <objects name="Extensions">
       <objects name="DT - Controller Manager">
