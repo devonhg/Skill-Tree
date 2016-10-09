@@ -44,7 +44,8 @@
       </scripts>
     </scripts>
     <scripts name="GAME">
-      <script>scripts\draw_branch_vertexes.gml</script>
+      <script>scripts\scr_draw_branch_vertexes.gml</script>
+      <script>scripts\scr_ini.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -55,6 +56,7 @@
   <objects name="objects">
     <objects name="GAME">
       <object>objects\obj_branch</object>
+      <object>objects\con_main</object>
     </objects>
     <objects name="Extensions">
       <objects name="DT - Controller Manager">
@@ -70,6 +72,7 @@
   </objects>
   <rooms name="rooms">
     <rooms name="GAME">
+      <room>rooms\rm_ini</room>
       <room>rooms\rm_test</room>
     </rooms>
     <rooms name="DT - SSD">
