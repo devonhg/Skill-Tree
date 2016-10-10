@@ -9,7 +9,9 @@
     <extension index="2">extensions\DT - Script Library</extension>
   </NewExtensions>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_X</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -46,6 +48,7 @@
     <scripts name="GAME">
       <script>scripts\scr_draw_branch_vertexes.gml</script>
       <script>scripts\scr_ini.gml</script>
+      <script>scripts\scr_draw_branch.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

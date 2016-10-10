@@ -64,7 +64,55 @@ console_size = display_get_gui_height()/2;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Game Debug Values    
+show_debug_overlay(game_debug_mode);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enable/Disable Debug Mode
+if( keyboard_check( game_debug_butt1 ) and keyboard_check_pressed( game_debug_butt2 ) ){
+    game_debug_mode = !game_debug_mode; 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -134,7 +182,7 @@ if( game_debug_mode ){
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -151,32 +199,10 @@ if( game_debug_mode ){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Game Debug Values    
-show_debug_overlay(game_debug_mode);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Enable/Disable Debug Mode
-if( keyboard_check( game_debug_butt1 ) and keyboard_check_pressed( game_debug_butt2 ) ){
-    game_debug_mode = !game_debug_mode; 
-}
+            <string>//Clear the Array
+game_debug_values = 0; 
+game_debug_values[0,0] = ""; 
+game_debug_values[0,1] = -1; 
 </string>
           </argument>
         </arguments>
@@ -218,10 +244,7 @@ if( game_debug_mode ){
 }
 draw_set_color( c_black );
 draw_set_font( -1 ); 
-//Clear the Array
-game_debug_values = 0; 
-game_debug_values[0,0] = ""; 
-game_debug_values[0,1] = -1; 
+
 </string>
           </argument>
         </arguments>
