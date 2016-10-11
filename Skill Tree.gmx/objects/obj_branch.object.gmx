@@ -119,7 +119,7 @@ default_state = startx == -1 and starty == -1 and stopx == -1 and stopy == -1;
             <string>///Draw Branch
 
 if( !default_state ){
-    scr_draw_branch( startx, starty, stopx, stopy, 70 );
+    scr_draw_branch( startx, starty, stopx, stopy, width );
 }
 
 
