@@ -26,12 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>//Declare Values
-startx = -1;
-starty = -1;
-stopx = -1;
-stopy = -1;
+startx = mouse_x;
+starty = mouse_y;
+stopx = mouse_x;
+stopy = mouse_y;
 default_state = true; 
-width = 100; 
+width = 80; 
+limb_index = 0; 
+
+parent = -4;
+child = -4;
 
 pos_nose[0] = 0;//Nose position x
 pos_nose[1] = 0;//Nose position y 
@@ -91,9 +95,12 @@ dt_track( "Start", string(pos_start[0]) + "/" + string(pos_start[1]), string( id
             <kind>1</kind>
             <string>///Checks
 
-//Default State
+//Default State, catches and makes sure that
+//default_state = startx == -1 and starty == -1 and stopx == -1 and stopy == -1; 
 
-default_state = startx == -1 and starty == -1 and stopx == -1 and stopy == -1; 
+if( parent != -4 ){
+    parent.width = width * 1.2; //Reduce width to 20% of parent width
+}
 </string>
           </argument>
         </arguments>
@@ -118,10 +125,11 @@ default_state = startx == -1 and starty == -1 and stopx == -1 and stopy == -1;
             <kind>1</kind>
             <string>///Draw Branch
 
-if( !default_state ){
-    scr_draw_branch( startx, starty, stopx, stopy, width );
-}
+scr_draw_branch( startx, starty, stopx, stopy, width );
 
+if( parent != -4 ){
+    scr_connect_branches( parent, id ); 
+}
 
 </string>
           </argument>

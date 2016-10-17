@@ -44,4 +44,6 @@ draw_primitive_begin( pr_trianglefan );
 
 draw_primitive_end();
 
-draw_line( argument[0], argument[1], argument[2], argument[3] );
+draw_sprite( spr_X, 0, pos_nose[0], pos_nose[1] );
+
+//draw_line( argument[0], argument[1], argument[2], argument[3] );

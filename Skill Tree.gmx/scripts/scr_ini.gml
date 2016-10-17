@@ -2,7 +2,7 @@
     Skilltree global values file
 */
 
-global.game_version = "0.0.3";
+global.game_version = "0.0.4";
 
 //Set the debug mode title
 var _title = string_replace(game_project_name, "_", " ") + " - Ver " + global.game_version;

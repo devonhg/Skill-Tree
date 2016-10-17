@@ -31,6 +31,9 @@ end_position[0] = 0;
 end_position[1] = 0; 
 
 working_branch = -4; 
+working_limb_index = 0; 
+
+limb_array = 0; 
 </string>
           </argument>
         </arguments>
@@ -54,12 +57,26 @@ working_branch = -4;
           <argument>
             <kind>1</kind>
             <string>///Create branches
-
 if( mouse_check_button(mb_left) ){
     if( working_branch == -4 ){
         working_branch = instance_create( mouse_x, mouse_y, obj_branch );
-        working_branch.startx = mouse_x;
-        working_branch.starty = mouse_y; 
+        working_branch.limb_index = working_limb_index;
+        
+        //If not array, initiate, else push into array
+        if( !is_array( limb_array ) ){
+            limb_array[0] = working_branch;
+            working_branch.startx = mouse_x;
+            working_branch.starty = mouse_y;
+        }else{
+            var _len = array_length_1d(limb_array);
+            limb_array[_len] = working_branch;
+            
+            working_branch.startx = limb_array[_len-1].pos_nose[0];
+            working_branch.starty = limb_array[_len-1].pos_nose[1];
+            working_branch.parent = limb_array[_len-1];
+        }
+    
+        
     }else{
         working_branch.stopx = mouse_x;
         working_branch.stopy = mouse_y;
@@ -73,6 +90,9 @@ if( mouse_check_button(mb_left) ){
     }
 }
 
+dt_track( "Limb Array", limb_array );
+
+//Release the branch
 if( mouse_check_button_released(mb_left) ){
     working_branch = -4;
 }
